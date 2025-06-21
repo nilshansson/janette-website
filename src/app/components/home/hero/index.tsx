@@ -9,7 +9,7 @@ function HeroSection() {
       <Parallax speed={-25}>
         <section className="relative flex items-end text-white bg-black h-full min-h-screen">
           <Image
-            src="/images/home/portfolio/projectsbild-hemsida.JPEG"
+            src="/images/home/portfolio/janette.png"
             alt="Picture of art in exhibition"
             fill
             className="object-cover w-full h-full"
@@ -36,12 +36,12 @@ function HeroSection() {
                 <div className="w-11 h-11 flex-shrink-0"></div>
                 <p className="text-white/70 max-w-md">
                   {" "}
-                  <span className="text-primary">Abstract Painter</span> based
-                  in Stockholm/Helsinki.
+                  <span className="text-primary">Flutist</span> based in
+                  Helsinki.
                 </p>
               </div>
               <div className="flex flex-col lg:flex-row items-start lg:items-end gap-4">
-                <h1 className="large-heading">Janette Lévan</h1>
+                <h4 className="large-heading">Janette Lévan</h4>
                 <div></div>
               </div>
             </div>
