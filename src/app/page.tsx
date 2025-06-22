@@ -19,10 +19,10 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <Testimonial />
       <Portfolio />
       <ComissionAWork />
 
-      <Testimonial />
       <Team teamdataNumber="06" />
       <Pricing />
       <Faq />
