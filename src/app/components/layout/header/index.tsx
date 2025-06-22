@@ -1,21 +1,18 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import MenuList from "./MenuList";
 import Link from "next/link";
 import ThemeToggler from "./ThemeToggle";
 import { usePathname } from "next/navigation";
-
-import { Icon } from "@iconify/react/dist/iconify.js";
 import Logo from "../logo";
 
 const Header = () => {
   const [user, setUser] = useState<{ user: any } | null>(null);
   const [menuData, setMenuData] = useState<any>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false); // Track closing animation
+  const [isClosing, setIsClosing] = useState(false);
   const [sticky, setSticky] = useState(false);
   const pathname = usePathname();
-  const menuRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     setSticky(window.scrollY >= 80);
@@ -34,22 +31,10 @@ const Header = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem("user");
-
     setUser(null);
   };
 
-  // Close menu with animation when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsClosing(true); // Start closing animation
-        setTimeout(() => {
-          setMenuOpen(false); // Hide menu after animation
-          setIsClosing(false);
-        }, 300); // Adjust timing to match animation duration
-      }
-    };
-
     const fetchData = async () => {
       try {
         const res = await fetch("/api/layout-data");
@@ -57,15 +42,27 @@ const Header = () => {
         const data = await res.json();
         setMenuData(data?.MenuData);
       } catch (error) {
-        console.error("Error fetching services:", error);
+        console.error("Error fetching menu data:", error);
       }
     };
     fetchData();
+  }, []);
 
+  // Handle closing the mobile menu with animation
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const menu = document.getElementById("mobileMenu");
+      if (menu && !menu.contains(event.target as Node)) {
+        setIsClosing(true);
+        setTimeout(() => {
+          setMenuOpen(false);
+          setIsClosing(false);
+        }, 300);
+      }
+    };
     if (menuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -79,44 +76,45 @@ const Header = () => {
     >
       <div className="container">
         <nav
-          className={`relative flex item-center justify-between ${
+          className={`relative flex items-center justify-between ${
             sticky ? "py-5" : "py-7"
           }`}
         >
-          <div className="flex items-center">
-            <Logo sticky={sticky} />
-          </div>
-          <div className="flex items-center gap-7">
-            <div className="flex item-center gap-3">
-              <ThemeToggler />
-            </div>
+          {/* Logo */}
+          <Logo sticky={sticky} />
 
-            <div className="relative flex align-middle">
+          <div className="flex items-center gap-7">
+            {/* Inline Menu for desktop */}
+            <ul className="hidden lg:flex items-center gap-6">
+              {menuData?.map((menuItem: any, index: number) => (
+                <MenuList key={index} item={menuItem} closeMenu={() => {}} />
+              ))}
+            </ul>
+            {/* Theme Toggler */}
+            <ThemeToggler />
+
+            {/* Mobile Hamburger */}
+            <div className="lg:hidden relative flex items-center">
               {menuOpen === false ? (
-                <div className="flex align-middle">
-                  <button onClick={() => setMenuOpen(true)}>
-                    <Image
-                      src={
-                        sticky
-                          ? "/images/Icon/menu-button-sticky.svg"
-                          : "/images/Icon/menu-button.svg"
-                      }
-                      alt="icon"
-                      width={45}
-                      height={45}
-                      className="cursor-pointer"
-                    />
-                  </button>
-                </div>
+                <button onClick={() => setMenuOpen(true)}>
+                  <Image
+                    src={
+                      sticky
+                        ? "/images/Icon/menu-button-sticky.svg"
+                        : "/images/Icon/menu-button.svg"
+                    }
+                    alt="Menu Icon"
+                    width={45}
+                    height={45}
+                    className="cursor-pointer"
+                  />
+                </button>
               ) : (
                 <div
-                  ref={menuRef}
-                  className={`absolute -top-5 right-0 flex flex-col gap-5 min-w-80 sm:min-w-96 bg-white dark:bg-twilliteblack p-6 rounded-3xl shadow-lg transition-all duration-300 ease-in-out z-10 
-                                    ${
-                                      isClosing
-                                        ? "opacity-0 scale-95"
-                                        : "opacity-100 scale-100"
-                                    }`}
+                  id="mobileMenu"
+                  className={`absolute -top-5 right-0 flex flex-col gap-5 min-w-80 sm:min-w-96 bg-white dark:bg-twilliteblack p-6 rounded-3xl shadow-lg transition-all duration-300 ease-in-out z-10 ${
+                    isClosing ? "opacity-0 scale-95" : "opacity-100 scale-100"
+                  }`}
                 >
                   <div className="flex items-center justify-between pb-5 border-b border-secondary/15 dark:border-white/15">
                     <p className="text-secondary dark:text-white">Menu</p>
@@ -126,34 +124,34 @@ const Header = () => {
                     >
                       <Image
                         src="/images/Icon/close-icon.svg"
-                        alt="icon"
+                        alt="Close"
                         width={16}
                         height={16}
                         className="dark:hidden"
                       />
                       <Image
                         src="/images/Icon/close-icon-dark.svg"
-                        alt="icons"
+                        alt="Close"
                         width={16}
                         height={16}
                         className="hidden dark:block"
                       />
                     </div>
                   </div>
-                  <div>
-                    <ul className="flex flex-col gap-2 pb-4">
-                      {menuData?.map((menuItem: any, index: any) => (
-                        <MenuList
-                          key={index}
-                          item={menuItem}
-                          closeMenu={() => setMenuOpen(false)}
-                        />
-                      ))}
-                    </ul>
-                  </div>
+
+                  <ul className="flex flex-col gap-2 pb-4">
+                    {menuData?.map((menuItem: any, index: number) => (
+                      <MenuList
+                        key={index}
+                        item={menuItem}
+                        closeMenu={() => setMenuOpen(false)}
+                      />
+                    ))}
+                  </ul>
+
                   <div>
                     <Link
-                      href="tel:+1-212-456-7890"
+                      href="tel:+46-73-052-0522"
                       className="text-secondary/60 dark:text-white/60 hover:text-secondary dark:hover:text-white"
                     >
                       +46-73 052 0522
