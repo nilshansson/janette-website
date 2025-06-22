@@ -99,9 +99,7 @@ const Projectswiper = () => {
                 </span>
               </Link>
             </div>
-            <div className="flex flex-col gap-2 lg:gap-4">
-              <h3>{value.title}</h3>
-            </div>
+            <div className="flex flex-col gap-2 lg:gap-4"></div>
           </div>
         </SwiperSlide>
       ))}

@@ -21,12 +21,6 @@ export default function Home() {
       <HeroSection />
       <Testimonial />
       <Portfolio />
-      <ComissionAWork />
-
-      <Team teamdataNumber="06" />
-      <Pricing />
-      <Faq />
-      <Resources />
       <Contact contactdataNumber="10" />
     </>
   );

@@ -15,12 +15,8 @@ function Portfolio() {
                 <div className="flex flex-col gap-5 ">
                   <div className="py-5"></div>
                   <h2 className="max-w-3xl text-green dark:text-white">
-                    Abstract Works
+                    Media
                   </h2>
-                  <p className="max-w-2xl text-secondary/70 dark:text-white/70">
-                    A glimpse into my world—vibrant colors, expressive energy,
-                    and paintings that feel alive with movement and emotion.
-                  </p>
                 </div>
               </div>
             </div>
