@@ -14,22 +14,7 @@ const MenuList = ({ item, closeMenu }: { item: any; closeMenu: any }) => {
         className={`overflow-hidden transition-all duration-500 ease-in-out 
                 ${isActive ? "max-w-6 opacity-100" : "max-w-0 opacity-0"} 
                 group-hover:max-w-6 group-hover:opacity-100`}
-      >
-        <Image
-          src="/images/logo/favicondark.svg"
-          alt="icon"
-          height={20}
-          width={40}
-          className="animate-spin dark:hidden"
-        />
-        <Image
-          src="/images/logo/favicon.svg"
-          alt="icon"
-          height={20}
-          width={40}
-          className="animate-spin hidden dark:block"
-        />
-      </div>
+      ></div>
       <Link
         href={path}
         onClick={closeMenu}
