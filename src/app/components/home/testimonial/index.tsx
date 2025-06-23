@@ -6,7 +6,7 @@ export default function Biography() {
   return (
     <section className="flex items-center justify-center min-h-screen bg-lightgray dark:bg-twilliteblack px-5">
       <div className="max-w-6xl text-center">
-        <h1 className="text-3xl md:text-5xl mb-8 text-black font-extralight dark:text-white underline">
+        <h1 className="text-3xl md:text-5xl mb-8 text-black font-extralight dark:text-white ">
           Bio
         </h1>
         <p className="text-base md:text-lg leading-relaxed text-secondary/80 dark:text-white/80 mb-10">
@@ -21,7 +21,7 @@ export default function Biography() {
           develop projects that explore the boundaries between classical and
           modern repertoire.
         </p>
-        <h1 className="text-4xl md:text-6xl font-extralight mb-8 text-black dark:text-white underline">
+        <h1 className="text-4xl md:text-6xl font-extralight mb-8 text-black dark:text-white ">
           Upcoming Concerts
         </h1>
         <Link
