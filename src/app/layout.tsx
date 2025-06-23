@@ -1,7 +1,7 @@
 "use client";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-
+import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,6 +13,10 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,7 +45,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={manrope.className}>
+      <body className={`${inter.className}`}>
         <ThemeProvider
           attribute="class"
           enableSystem={false}
