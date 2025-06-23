@@ -91,7 +91,7 @@ const Header = () => {
                   key={index}
                   item={menuItem}
                   closeMenu={() => {}}
-                  sticky
+                  sticky={sticky}
                 />
               ))}
             </ul>
@@ -150,7 +150,7 @@ const Header = () => {
                   <ul className="flex flex-col items-center gap-2 pb-4">
                     {menuData?.map((menuItem: any, index: number) => (
                       <MenuList
-                        sticky
+                        sticky={sticky}
                         key={index}
                         item={menuItem}
                         closeMenu={() => setMenuOpen(false)}
