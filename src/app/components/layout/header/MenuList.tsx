@@ -18,7 +18,7 @@ const MenuList = ({ item, closeMenu }: { item: any; closeMenu: any }) => {
       <Link
         href={path}
         onClick={closeMenu}
-        className="text-secondary dark:text-white text-2xl font-bold"
+        className="text-secondary dark:text-white text-2xl font-extralight"
         target={newTab ? "_blank" : "_self"}
       >
         {title}

@@ -148,18 +148,6 @@ const Header = () => {
                       />
                     ))}
                   </ul>
-
-                  <div>
-                    <Link
-                      href="tel:+46-73-052-0522"
-                      className="text-secondary/60 dark:text-white/60 hover:text-secondary dark:hover:text-white"
-                    >
-                      +46-73 052 0522
-                    </Link>
-                    <Link href="mailto:nilsmenghansson@gmail.com">
-                      <h4>nilsmenghansson@gmail.com</h4>
-                    </Link>
-                  </div>
                 </div>
               )}
             </div>
