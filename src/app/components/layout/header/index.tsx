@@ -83,17 +83,19 @@ const Header = () => {
           {/* Logo */}
           <Logo sticky={sticky} />
 
-          <div className="flex items-center gap-7">
-            {/* Inline Menu for desktop */}
-            <ul className="hidden lg:flex items-center gap-6">
+          {/* Desktop menu centered */}
+          <div className="hidden lg:flex flex-1 justify-center">
+            <ul className="flex items-center gap-6">
               {menuData?.map((menuItem: any, index: number) => (
                 <MenuList key={index} item={menuItem} closeMenu={() => {}} />
               ))}
             </ul>
-            {/* Theme Toggler */}
+          </div>
+
+          {/* Theme toggler & hamburger */}
+          <div className="flex items-center gap-7">
             <ThemeToggler />
 
-            {/* Mobile Hamburger */}
             <div className="lg:hidden relative flex items-center">
               {menuOpen === false ? (
                 <button onClick={() => setMenuOpen(true)}>
@@ -139,7 +141,8 @@ const Header = () => {
                     </div>
                   </div>
 
-                  <ul className="flex flex-col gap-2 pb-4">
+                  {/* Mobile menu: centered */}
+                  <ul className="flex flex-col items-center gap-2 pb-4">
                     {menuData?.map((menuItem: any, index: number) => (
                       <MenuList
                         key={index}
