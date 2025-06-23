@@ -40,7 +40,7 @@ function HeroSection() {
                   {" "}
                   <span className="text-primary">Flutist</span>
                 </p>
-                <h1 className="large-heading font-[Times_New_Roman,Times,serif] ">
+                <h1 className="large-heading font-[Times_New_Roman,Times,serif] font-extralight">
                   Janette Lévan
                 </h1>
                 <div></div>
