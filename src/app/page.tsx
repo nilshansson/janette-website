@@ -9,8 +9,6 @@ import Resources from "./components/home/resources";
 import Team from "./components/home/team";
 import Testimonial from "./components/home/testimonial";
 
-import ComissionAWork from "./components/home/comission-a-work";
-
 export const metadata: Metadata = {
   title: "Janette Lévan",
 };

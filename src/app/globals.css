@@ -13,7 +13,7 @@
   /* color */
   --color-primary: #f5f5f5; /* soft white for backgrounds */
   --color-secondary: #1a1a1a; /* deep black for text or headings */
-  --color-lightgray: #e5e5e5; /* light grey for backgrounds / subtle borders */
+  --color-lightgray: #fff; /* light grey for backgrounds / subtle borders */
   --color-overlay: #00000099; /* semi-transparent black for overlays */
   --color-darkblack: #121212; /* true deep black for dark mode or accents */
   --color-twilliteblack: #181818; /* slightly lighter black, nice for dark sections */

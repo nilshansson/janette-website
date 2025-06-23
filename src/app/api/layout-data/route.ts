@@ -25,12 +25,7 @@ const MenuData = [
     path: "/blog",
     newTab: false,
   },
-  {
-    id: 5,
-    title: "Comission A Work",
-    path: "/#comission-a-work",
-    newTab: false,
-  },
+
   {
     id: 6,
     title: "Contact",
