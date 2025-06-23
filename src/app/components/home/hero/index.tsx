@@ -23,9 +23,9 @@ function HeroSection() {
               <div className="flex items-start gap-2 md:gap-6">
                 <div className="w-11 h-11 flex-shrink-0"></div>
               </div>
-              <div className="flex flex-col items-start gap-2">
+              <div className="flex flex-col items-start gap-3">
                 <h1 className="large-heading font-[Times_New_Roman,Times,serif] font-extralight">
-                  Janette Lévan
+                  JANETTE LÉVAN
                 </h1>
                 <p className="text-white/70 text-lg">
                   <span className="text-primary">Flutist</span>
