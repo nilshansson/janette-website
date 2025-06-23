@@ -27,7 +27,7 @@ const MenuList = ({
         href={path}
         onClick={closeMenu}
         className={`text-2xl font-extralight transition-all duration-300 
-          ${sticky ? "text-white" : "text-secondary"} dark:text-white`}
+          ${sticky ? "text-white" : "text-black"} dark:text-white`}
         target={newTab ? "_blank" : "_self"}
       >
         {title}
