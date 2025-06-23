@@ -87,7 +87,12 @@ const Header = () => {
           <div className="hidden lg:flex flex-1 justify-center">
             <ul className="flex items-center gap-6">
               {menuData?.map((menuItem: any, index: number) => (
-                <MenuList key={index} item={menuItem} closeMenu={() => {}} />
+                <MenuList
+                  key={index}
+                  item={menuItem}
+                  closeMenu={() => {}}
+                  sticky
+                />
               ))}
             </ul>
           </div>
@@ -145,6 +150,7 @@ const Header = () => {
                   <ul className="flex flex-col items-center gap-2 pb-4">
                     {menuData?.map((menuItem: any, index: number) => (
                       <MenuList
+                        sticky
                         key={index}
                         item={menuItem}
                         closeMenu={() => setMenuOpen(false)}
