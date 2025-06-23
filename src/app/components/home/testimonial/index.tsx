@@ -9,7 +9,7 @@ export default function Biography() {
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-secondary dark:text-white underline">
           Bio
         </h1>
-        <p className="text-lg md:text-xl leading-relaxed text-secondary/80 dark:text-white/80 mb-10">
+        <p className="text-base md:text-lg leading-relaxed text-secondary/80 dark:text-white/80 mb-10">
           Janette Levan is a Finnish flutist known for her sensitive and
           expressive playing style. Born and raised in Helsinki, she has
           performed as a soloist and chamber musician throughout Scandinavia and
