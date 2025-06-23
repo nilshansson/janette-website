@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Biography() {
   return (
     <section className="flex items-center justify-center min-h-screen bg-lightgray dark:bg-twilliteblack px-5">
-      <div className="max-w-5xl text-center">
+      <div className="max-w-6xl text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-secondary dark:text-white underline">
           Bio
         </h1>
