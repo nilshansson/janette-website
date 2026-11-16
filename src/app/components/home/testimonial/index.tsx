@@ -10,7 +10,7 @@ export default function Biography() {
           Bio
         </h1>
         <p className="text-base md:text-lg leading-relaxed text-secondary/80 dark:text-white/80 mb-10">
-          Janette Levan is a Finnish flutist known for her sensitive and
+          Janette Lévan is a Finnish flutist known for her sensitive and
           expressive playing style. Born and raised in Helsinki, she has
           performed as a soloist and chamber musician throughout Scandinavia and
           Europe. Janette studied at the Sibelius Academy and has collaborated
@@ -25,7 +25,7 @@ export default function Biography() {
           Upcoming Concerts
         </h1>
         <Link
-          href="/Events"
+          href="/events"
           className="flex justify-center items-center w-full bg-primary hover:bg-secondary rounded-full transition-all duration-300 ease-in-out"
         >
           <span className="py-4 px-2 text-lg font-bold text-secondary hover:text-white transition-all duration-300 ease-in-out">

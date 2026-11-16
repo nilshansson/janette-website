@@ -6,19 +6,21 @@ const Herobanner = ({
   heading,
   desc,
   headingClass = "large-heading",
+  imagePosition = "object-center",
 }: {
   bannerimage: string;
   heading: string;
   desc: string;
   headingClass?: string;
+  imagePosition?: string;
 }) => {
   const splitDesc = desc.split(/<\/?span>/);
 
   return (
     <section className="relative flex items-end text-white bg-black h-screen max-h-650px">
       <Image
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        alt="Image"
+        className={`absolute top-0 left-0 w-full h-full object-cover ${imagePosition}`}
+        alt="Janette Lévan"
         src={bannerimage}
         height={694}
         width={1800}

@@ -15,19 +15,12 @@ const MenuData = [
   },
   {
     id: 3,
-    title: "Artworks",
-    path: "/projects",
+    title: "Events",
+    path: "/events",
     newTab: false,
   },
   {
     id: 4,
-    title: "Events",
-    path: "/blog",
-    newTab: false,
-  },
-
-  {
-    id: 6,
     title: "Contact",
     path: "/contact",
     newTab: false,
@@ -36,21 +29,16 @@ const MenuData = [
 
 const footerData = {
   name: "Janette Lévan",
-  tagline: "Let's put some color on your walls",
+  tagline: "Janette Lévan — Flutist",
 
   links: [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Comission A Work", href: "/#comission-a-work" },
-    { name: "Artwork", href: "/projects" },
-    { name: "Terms", href: "/terms-and-conditions" },
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Error 404", href: "/not-found" },
+    { name: "Events", href: "/events" },
+    { name: "Contact", href: "/contact" },
   ],
-  socialLinks: [
-    { name: "Facebook", href: "https://www.facebook.com/" },
-    { name: "Instagram", href: "https://www.instagram.com/nilshanssonmeng" },
-  ],
+  socialLinks: [],
+  copyright: `© ${new Date().getFullYear()} Janette Lévan`,
 };
 
 export const GET = async () => {
