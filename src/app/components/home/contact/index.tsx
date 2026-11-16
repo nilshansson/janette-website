@@ -1,32 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const Contact = (props: { contactdataNumber: string }) => {
-  const { contactdataNumber } = props;
+const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loader, setLoader] = useState(false);
-  const [contactData, setContactData] = useState<any>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("/api/page-data");
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setContactData(data?.statsFactData);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      }
-    };
-    fetchData();
-  }, []);
   const reset = () => {
     formData.name = "";
     formData.email = "";
@@ -80,48 +65,9 @@ const Contact = (props: { contactdataNumber: string }) => {
             <div className="max-w-md flex flex-col gap-9 md:gap-16">
               <div className="flex flex-col gap-5 md:gap-8">
                 <p className="max-w-2xl text-secondary/70 dark:text-white/70">
-                  Let’s collaborate and create something amazing! Tell me about
-                  your project—I’m all ears.
+                  For concert bookings, collaborations and other enquiries,
+                  send a message and Janette will get back to you.
                 </p>
-                <div>
-                  <ul className="flex flex-col gap-3">
-                    {contactData?.keypoint?.map((value: any, index: any) => {
-                      return (
-                        <li
-                          key={index}
-                          className="flex items-center gap-1.5 sm:gap-4"
-                        >
-                          <div className="bg-primary w-fit p-1 sm:p-1.5 rounded-full flex-shrink-0">
-                            <Image
-                              src={"/images/Icon/right-check.svg"}
-                              alt="right-icon"
-                              width={20}
-                              height={20}
-                            />
-                          </div>
-                          <span className="flex-1">{value}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-              <div className="flex items-center gap-5">
-                {contactData?.managerProfile?.image && (
-                  <Image
-                    src={contactData?.managerProfile?.image}
-                    alt="image"
-                    width={64}
-                    height={64}
-                    className="rounded-full"
-                  />
-                )}
-                <div>
-                  <p>{contactData?.managerProfile?.name}</p>
-                  <span className="text-base text-secondary/70 dark:text-white/70">
-                    {contactData?.managerProfile?.position}
-                  </span>
-                </div>
               </div>
             </div>
             <div className="w-full">
@@ -160,7 +106,7 @@ const Contact = (props: { contactdataNumber: string }) => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your idea"
+                    placeholder="Message"
                     rows={4}
                   />
                 </div>
@@ -175,8 +121,7 @@ const Contact = (props: { contactdataNumber: string }) => {
                       />
                     </div>
                     <p className="text-secondary">
-                      Great!!! Email has been Successfully Sent. We will get in
-                      touch asap.
+                      Thank you! Your message has been sent.
                     </p>
                   </div>
                 )}

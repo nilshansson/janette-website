@@ -9,11 +9,12 @@ export default function Page() {
   return (
     <main>
       <Herobanner
-        bannerimage="/images/contact/banner/contact-banner.png"
+        bannerimage="/images/about-us/bio/janette-bio-hero.jpg"
+        imagePosition="object-[85%_center]"
         heading="Contact"
-        desc="Ready to <span>create something</span> unique? Reach out — I’d love to hear your ideas."
+        desc="For <span>concert bookings</span> and other enquiries, get in touch."
       />
-      <Contact contactdataNumber="01" />
+      <Contact />
     </main>
   );
 }

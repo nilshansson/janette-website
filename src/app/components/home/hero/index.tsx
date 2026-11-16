@@ -10,7 +10,7 @@ function HeroSection() {
         <section className="relative flex items-end text-white bg-black h-full min-h-screen">
           <Image
             src="/images/home/portfolio/janette.png"
-            alt="Picture of art in exhibition"
+            alt="Janette Lévan with her flute"
             fill
             className="object-cover w-full h-full"
             priority // optional, improves loading
